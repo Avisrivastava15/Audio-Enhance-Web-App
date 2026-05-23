@@ -1,8 +1,9 @@
-🎧 Audio Processing Web App
+**🎧 Audio Processing Web App**
+
 
 An AI-powered audio enhancement web application that removes echo, reduces noise, and improves audio clarity using a Flask-based signal processing backend and a modern React + TypeScript frontend.
 
-🚀 Features
+**🚀 Features**
 🎙️ Upload MP3 / WAV audio files
 🔊 Noise reduction using adaptive filtering
 📡 Echo detection and removal
@@ -12,8 +13,12 @@ An AI-powered audio enhancement web application that removes echo, reduces noise
 🎧 Audio preview (before & after)
 ⬇️ Download enhanced audio (WAV format)
 🔐 Optional authentication (guest + user mode)
-🧠 Tech Stack
-Frontend
+
+
+**🧠 Tech Stack**
+
+**Frontend**
+
 React (Vite)
 TypeScript
 Tailwind CSS
@@ -27,7 +32,9 @@ SciPy
 Noisereduce
 SoundFile (SF)
 Pydub
-📁 Project Structure
+
+**📁 Project Structure**
+```
 Audio-Processing-Web-App/
 │
 ├── frontend/              # React + TypeScript UI
@@ -43,7 +50,10 @@ Audio-Processing-Web-App/
 │
 ├── README.md
 └── .gitignore
-⚙️ How It Works
+```
+
+**⚙️ How It Works**
+
 User uploads an audio file (MP3/WAV)
 Frontend sends file to Flask backend
 Backend pipeline:
@@ -54,7 +64,9 @@ Reverb reduction (spectral masking)
 Normalization
 Processed audio is saved and returned
 User can preview or download enhanced audio
-🧪 Backend API Endpoints
+
+**🧪 Backend API Endpoints**
+
 🔹 Upload Audio
 POST /api/upload
 🔹 Process Audio
