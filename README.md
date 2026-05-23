@@ -1,93 +1,110 @@
-# AudioEnhance - Professional Audio Enhancement Tool
+🎧 Audio Processing Web App
 
-## Setup Instructions
+An AI-powered audio enhancement web application that removes echo, reduces noise, and improves audio clarity using a Flask-based signal processing backend and a modern React + TypeScript frontend.
 
-### Prerequisites
-- Node.js 18+ installed
-- Python 3.9+ installed with pip
-
-### Running the Application
-
-#### 1. Start the Python Backend (Required for audio processing)
-
-```bash
-# Navigate to backend directory
+🚀 Features
+🎙️ Upload MP3 / WAV audio files
+🔊 Noise reduction using adaptive filtering
+📡 Echo detection and removal
+🎚️ Reverb reduction using spectral processing
+⚡ Real-time step-by-step processing UI
+📊 Progress simulation with interactive loaders
+🎧 Audio preview (before & after)
+⬇️ Download enhanced audio (WAV format)
+🔐 Optional authentication (guest + user mode)
+🧠 Tech Stack
+Frontend
+React (Vite)
+TypeScript
+Tailwind CSS
+Context API (Auth + State management)
+Lucide Icons
+Backend
+Flask (Python)
+NumPy
+Librosa
+SciPy
+Noisereduce
+SoundFile (SF)
+Pydub
+📁 Project Structure
+Audio-Processing-Web-App/
+│
+├── frontend/              # React + TypeScript UI
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│
+├── backend/               # Flask API server
+│   ├── app.py
+│   ├── uploads/
+│   ├── processed/
+│   ├── venv/ (ignored)
+│
+├── README.md
+└── .gitignore
+⚙️ How It Works
+User uploads an audio file (MP3/WAV)
+Frontend sends file to Flask backend
+Backend pipeline:
+Noise reduction
+Echo detection (autocorrelation)
+Echo removal (adaptive filtering)
+Reverb reduction (spectral masking)
+Normalization
+Processed audio is saved and returned
+User can preview or download enhanced audio
+🧪 Backend API Endpoints
+🔹 Upload Audio
+POST /api/upload
+🔹 Process Audio
+POST /api/process
+🔹 Stream Processed Audio
+GET /api/stream/<file_id>
+🔹 Download Audio
+GET /api/download/<file_id>
+🖥️ Local Setup
+1. Clone repo
+git clone https://github.com/Avisrivastava15/Audio-Processing-Web-App.git
+cd Audio-Processing-Web-App
+2. Backend setup
 cd backend
-
-# Install Python dependencies
+python -m venv venv
+venv\Scripts\activate   # Windows
 pip install -r requirements.txt
-
-# Run the Flask server
 python app.py
-```
 
-The Python server will run on http://localhost:5000
+Backend runs at:
 
-#### 2. Start the Frontend (React application)
-
-Open a new terminal:
-
-```bash
-# Navigate to project root
-cd /path/to/project
-
-# Install Node dependencies
+http://localhost:5000
+3. Frontend setup
+cd frontend
 npm install
-
-# Run the development server
 npm run dev
-```
 
-The frontend will run on http://localhost:5173
+Frontend runs at:
 
-### How It Works
+http://localhost:5173
+🌐 Environment Variables
+Frontend (.env)
+VITE_SUPABASE_URL=your_url
+VITE_SUPABASE_ANON_KEY=your_key
+📸 UI Preview
 
-1. **Upload**: Upload MP3 or WAV audio files (max 100MB)
-2. **Process**: Python backend uses librosa, scipy, and noisereduce for real audio processing:
-   - Spectral analysis (STFT)
-   - Noise reduction (spectral gating)
-   - Echo detection (autocorrelation)
-   - Echo removal (Wiener adaptive filtering)
-   - Reverb reduction (spectral masking)
-3. **Download**: Enhanced audio saved as high-quality WAV file
+(Add screenshots here later)
 
-### Features
+⚠️ Known Issues / Limitations
+Heavy audio files may take longer processing time
+Echo removal may slightly affect voice naturalness (tradeoff in DSP)
+Backend runs locally (deployment needed for production use)
+🚀 Future Improvements
+Real-time audio processing (streaming)
+Better deep learning-based enhancement model
+Background noise classification
+Deployment (Vercel + Render / AWS)
+WebSocket-based progress tracking
+👨‍💻 Author
 
-- Real signal processing algorithms, not simulations
-- Echo and reverb removal using professional techniques
-- Noise reduction with adaptive filtering
-- Support for MP3 and WAV formats
-- Progress visualization during processing
-- Sign up required for downloads (guest mode for testing)
+Avi Srivastava
 
-### Tech Stack
-
-**Frontend:**
-- React + TypeScript
-- Vite
-- Tailwind CSS
-- Lucide React icons
-- Supabase for authentication
-
-**Backend:**
-- Python + Flask
-- librosa (audio processing)
-- scipy (signal processing)
-- noisereduce (noise removal)
-- soundfile (audio I/O)
-
-### API Endpoints
-
-- `GET /api/health` - Health check
-- `POST /api/upload` - Upload audio file
-- `POST /api/process` - Process uploaded audio
-- `GET /api/stream/<file_id>` - Stream processed audio
-- `GET /api/download/<file_id>` - Download processed audio
-- `DELETE /api/cleanup/<file_id>` - Clean up files
-
-### Notes
-
-- Both servers must be running for full functionality
-- Python server handles actual audio processing
-- Node server serves the frontend UI
-- Guest users can upload and listen but cannot download
+GitHub: @Avisrivastava15
