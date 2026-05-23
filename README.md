@@ -4,6 +4,7 @@
 An AI-powered audio enhancement web application that removes echo, reduces noise, and improves audio clarity using a Flask-based signal processing backend and a modern React + TypeScript frontend.
 
 **🚀 Features**
+
 🎙️ Upload MP3 / WAV audio files
 🔊 Noise reduction using adaptive filtering
 📡 Echo detection and removal
@@ -101,9 +102,7 @@ http://localhost:5173
 Frontend (.env)
 VITE_SUPABASE_URL=your_url
 VITE_SUPABASE_ANON_KEY=your_key
-📸 UI Preview
 
-(Add screenshots here later)
 
 ⚠️ Known Issues / Limitations
 Heavy audio files may take longer processing time
